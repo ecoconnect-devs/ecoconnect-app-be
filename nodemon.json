@@ -1,5 +1,5 @@
 {
     "watch": ["src"],
     "ext": "ts",
-    "exec": "env-cmd -f config/dev.env npx ts-node src/index.ts"
+    "exec": "npx tsc && env-cmd -f config/dev.env npx ts-node src/index.ts"
 }

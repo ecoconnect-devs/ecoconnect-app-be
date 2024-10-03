@@ -15,7 +15,6 @@
     "express": "^4.21.0",
     "graphql": "^16.9.0",
     "graphql-http": "^1.22.1",
-    "graphql-middleware": "^6.1.35",
     "graphql-playground-middleware-express": "^1.7.23",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.6.3",

@@ -38,9 +38,52 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const userSchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
+    firstname: { type: String, required: true },
+    lastname: { type: String, required: true },
+    companyName: { type: String, required: true },
+    type: { type: String, required: true },
+    phone: { type: String, required: false },
+    userCity: { type: String, required: false },
+    userRegion: { type: String, required: false },
+    userZip: { type: String, required: false },
+    userCountry: { type: String, required: false },
+    preferredCommunicationMethod: { type: String, required: false },
+    overview: { type: String, required: false },
+    mission: { type: String, required: false },
+    industry: { type: String, required: false },
+    productsOffered: { type: String, required: false },
+    practiceDescription: { type: String, required: false },
+    certifications: { type: String, required: false },
+    supportingDocs: { type: Array, required: false },
+    logoBlobString: { type: String, required: false },
+    headquartersLocation: { type: String, required: false },
+    address: { type: String, required: false },
+    companyZip: { type: String, required: false },
+    companySize: { type: String, required: false },
+    website: { type: String, required: false },
+    socials: { type: String, required: false },
+    profileCompleted: { type: Boolean, required: false },
+    profileApproved: { type: Boolean, required: false },
+    firstLogin: { type: Boolean, required: false },
+    settings: {
+        general: {
+            language: { type: String, required: false },
+            currency: { type: String, required: false },
+            timeZone: { type: String, required: false },
+            dateFormat: { type: String, required: false },
+            unit: { type: String, required: false },
+        },
+        notifications: {
+            email: {
+                newMessages: { type: String, required: false },
+                rfq: { type: String, required: false },
+                invitations: { type: String, required: false },
+            }
+        }
+    },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    token: { type: String, required: false },
 });
 // Hash password before saving
 userSchema.pre('save', function (next) {
